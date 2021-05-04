@@ -1,0 +1,32 @@
+$mat-card-header-bg: #EFEFF1 !default;
+$mat-card-header-border-color: rgba(#000, .12) !default;
+
+.flex {
+    display: flex;
+    width: 100%;
+}
+
+mat-card {
+    padding: 0 !important;
+    
+    mat-card-header {
+        box-sizing: border-box;
+        padding: 16px 24px;
+        background: $mat-card-header-bg;
+        border-bottom: 1px solid $mat-card-header-border-color;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+}
+#call-selection {
+    width: 47vw;
+}
+.agentCall {
+    width: 300px;
+}
+#intensity-selection {
+    mat-slider {
+        margin: 0 16px;
+        width: 400px;
+    }
+}

@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="container-title">
+        <div>{{tableLabel}}</div>
+        <div class="container-pieData">
+            {{percentage}}%
+            <app-pie-chart [pieData]="pieData"></app-pie-chart>
+        </div>
+    </div>
+    <div class="table-container">
+        <table mat-table [dataSource]="tableData" width="100%" class="table-matTable">
+            <ng-container [matColumnDef]="column" *ngFor="let column of columns; let i = index">
+                <th mat-header-cell *matHeaderCellDef class="table-thCell">{{column}}</th>
+                <td mat-cell *matCellDef="let data" class="table-tdCell">
+                    <div *ngIf="column === 'Sentence'" class="table-tdHover" id="matchingLine{{data.order}}"
+                        [ngClass]="{'table-tdHighlight': data.isMatching ? true : false,
+                                'table-tdMatchingHover': data.order === matchingLineNo ? true : false}"
+                        [matTooltipDisabled]="!data.matchingLineNo"
+                        matTooltip="{{data.similarity}}% matching with line #{{data.matchingLineNo}} - {{data.matching_sentence}}"
+                        [matTooltipPosition]="'above'"
+                        (mouseover)="triggerHighlighitMatchingSentence(data)"
+                        (mouseleave)="triggerHighlighitMatchingSentence('')">
+                        {{data[column]}}
+                    </div>
+                    <div *ngIf="column !== 'Sentence'">
+                        {{data[column]}}
+                    </div>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="columns; sticky: true;"></tr>
+            <tr mat-row class="mat-row" *matRowDef="let row; columns: columns; "></tr>
+        </table>
+    </div>
+</div>

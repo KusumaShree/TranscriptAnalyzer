@@ -1,0 +1,67 @@
+div.empty-state {
+    position: static;
+    width: 332px;
+    height: 385px;
+    left: 554px;
+    top: 285px;
+}
+
+div.empty-state div.img {
+    position: absolute;
+    width: 306px;
+    height: 250px;
+    left: 567px;
+    top: 285px;
+    background: url('../../../../assets/img/image1.svg');
+}
+
+div.body1font {
+    position: absolute;
+    width: 332px;
+    height: 55px;
+    left: 554px;
+    top: 615px;
+}
+
+div.body1font p {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: -1.82%;
+    /* Body */
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 28px;
+    /* or 175% */
+    text-align: center;
+    /* Black / 87% */
+    color: rgba(0, 0, 0, 0.87);
+}
+
+div.headline {
+    position: absolute;
+    width: 332px;
+    height: 32px;
+    left: 554px;
+    top: 567px;
+}
+
+div.headline h2 {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 12.5%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: 0.0018em;
+    /* Black / 87% */
+    color: rgba(0, 0, 0, 0.87);
+}

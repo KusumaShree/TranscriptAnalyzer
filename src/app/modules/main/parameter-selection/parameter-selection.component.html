@@ -1,0 +1,30 @@
+<ng-template #subHeader [formGroup]="form">
+    <div class=flex>
+        <div id="call-selection">
+            <mat-form-field floatLabel="never">
+                <mat-label>Agent</mat-label>
+                <mat-icon matPrefix>supervised_user_circle</mat-icon>
+                <mat-select disableOptionCentering formControlName="agent" panelClass="dropdown"
+                (selectionChange)="onAgentChange()">
+                    <mat-option value={{agent.agent_id}} *ngFor="let agent of agentList">{{agent.full_name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        
+            <mat-form-field floatLabel="never" class="agentCall">
+                <mat-label>Call</mat-label>
+                <mat-icon matPrefix>phone</mat-icon>
+                <mat-select disableOptionCentering formControlName="call"
+                (selectionChange)="onAgentCallChange()" >
+                    <mat-option value={{call.call_id}} *ngFor="let call of agentCalls">{{call.call_start_time}}. - {{call.call_full_name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div *ngIf="form.value.call" id="intensity-selection" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="24px">
+            MATCHING SENSITIVITY
+            <mat-slider min="0" max="100" [disabled]="disabled" formControlName="sensitivity" 
+                [(ngModel)]="sensitivity" (change)="onSensitivitySliderChange()"></mat-slider>
+                {{sensitivity}}%
+        </div>
+    </div>
+</ng-template>

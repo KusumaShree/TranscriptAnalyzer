@@ -1,0 +1,18 @@
+<div style="display: flex;">
+    <app-script-table 
+        [columns]="columnsReal" 
+        [tableData]="transcriptReal" 
+        [tableLabel]="'Real'" 
+        [percentage]="percentageReal"
+        [matchingLineNo]="realMatchingLineNo"
+        (highlightMatchingLine)="highlightMatchingLine($event, 'expected')"
+    ></app-script-table>
+    <app-script-table 
+        [columns]="columnsExpected" 
+        [tableData]="transcriptExpected" 
+        [tableLabel]="'Expected'"
+        [percentage]="percentageExpected"
+        [matchingLineNo]="expectedMatchingLineNo"
+        (highlightMatchingLine)="highlightMatchingLine($event, 'real')"
+    ></app-script-table>
+</div>

@@ -1,0 +1,9 @@
+
+<app-parameter-selection (onCallChange)="onAgentCallChange($event)" (onSensitivityChange)="onSensitivityChange($event)"></app-parameter-selection>
+<ng-container *ngIf="callId else emptyState">
+    <app-script-data [callId] = callId [sensitivity]=sensitivity></app-script-data>
+</ng-container>
+
+<ng-template #emptyState>
+    <app-empty-state></app-empty-state>
+</ng-template>

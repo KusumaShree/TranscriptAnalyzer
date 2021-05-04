@@ -1,0 +1,28 @@
+@import '~@angular/material/theming';
+
+@import './palettes/transcript-analyzer';
+// @import './palettes/transcript-analyzer.secondary';
+
+// Import custom layout styles and style overrides
+@import './layout/transcript-analyzer.layout';
+
+// Import custom component styles and style overrides
+@import './components/transcript-analyzer.mat-form-field';
+@import './components/transcript-analyzer.mat-toolbar';
+
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+$transcript-analyzer-primary: mat-palette($transcript-analyzer, 500, 400, 900);
+$transcript-analyzer-accent:  mat-palette($transcript-analyzer, 500, 400, 900);
+$transcript-analyzer-warn:    mat-palette($mat-red);
+
+$transcript-analyzer-theme: mat-light-theme((
+  color: (
+    primary: $transcript-analyzer-primary,
+    accent: $transcript-analyzer-accent,
+    warn: $transcript-analyzer-warn,  
+  )
+));
+
+@include angular-material-theme($transcript-analyzer-theme);

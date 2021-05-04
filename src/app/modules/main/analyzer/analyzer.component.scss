@@ -1,0 +1,28 @@
+.mat-column {
+    &-time {
+        width: 64px;
+    }
+
+    &-speaker {
+        width: 72px;
+    }
+
+    &-sentence:not(.mat-header-cell) {
+        .matcher {
+            background: rgba(#5A5A71, .2);
+            transition: background .2s;
+
+            &:hover {
+                background: rgba(#5A5A71, .4);
+            }
+        }
+    }
+}
+
+tr.mat-row {
+    height: auto;
+}
+
+td.mat-cell {
+    border-bottom: none;
+}
